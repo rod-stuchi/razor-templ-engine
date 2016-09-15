@@ -49,7 +49,7 @@ To generate HTML, HTML with password, PDF and PDF with password, just do:
 ```shell
 cmd.exe
 ```
- 
- ## How to create / build Razor views?
+
+## How to create / build Razor views?
 
  [HOWTO: Building Razor Views](/html-views/readme.md)
