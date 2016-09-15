@@ -50,6 +50,10 @@ The `gulp` default task up above will compile and open the browser with *live ed
 supported by Browser-Sync. Just change any file, save and the content will be injected 
 in the browser without the need to refresh the page manually every time by hitting (F5).
 
+**gulp, browser-sync = live editing** :clap: :clap: :clap:
+
+![Live Editing](../doc/img/live_editing2.gif)
+
 ```shell
 gulp build
 ```
