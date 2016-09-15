@@ -9,6 +9,7 @@ It is a engine that generates PDF and image files based on HTML template files.
 ## How to use?
 
 ![Generating Files](doc/img/rodstu_cmd_razor.gif)
+
 Before build the project, it is necessary create a file that will contain the `secret token` 
 to protect PDF files. This file must be in the root of user the profile.
 
