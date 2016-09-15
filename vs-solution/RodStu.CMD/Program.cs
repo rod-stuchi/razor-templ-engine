@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
 
 namespace RodStu.CMD
@@ -121,6 +120,7 @@ namespace RodStu.CMD
         {
             CurriculumModel model;
             string curriculumDataFile = Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), ".curriculum.data.xml");
+
             if (File.Exists(curriculumDataFile))
             {
                 model = File.ReadAllText(
@@ -145,8 +145,12 @@ namespace RodStu.CMD
                 string xml = model.XmlSerializeToString();
                 File.WriteAllText(curriculumDataFile, xml, Encoding.UTF8);
 
-                WriteLine($"File [{curriculumDataFile}] not found, but it was created with generic information.");
-                model = null;
+                var defColor = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                WriteLine($"File [{curriculumDataFile}] not found, but it was created with generic information.\r\n");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine(xml + "\r\n");
+                Console.ForegroundColor = defColor;
             }
 
             return model;

@@ -1,14 +1,9 @@
 ﻿using iTextSharp.text.pdf;
 using RazorEngine.Configuration;
 using RazorEngine.Templating;
-using RodStu.RazorTemplateEngine.Model;
 using RodStu.RazorTemplateEngine.Pdf;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RodStu.RazorTemplateEngine.Engine
 {

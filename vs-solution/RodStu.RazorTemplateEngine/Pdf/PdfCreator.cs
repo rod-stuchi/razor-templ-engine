@@ -1,12 +1,5 @@
 ﻿using RodStu.RazorTemplateEngine.Engine;
 using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using TuesPechkin;
 
 namespace RodStu.RazorTemplateEngine.Pdf
 {
