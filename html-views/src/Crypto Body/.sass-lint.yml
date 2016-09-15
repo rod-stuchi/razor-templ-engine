@@ -1,0 +1,13 @@
+# Rule Configuration
+rules:
+  extends-before-mixins: 2
+  no-ids: 0
+  no-misspelled-properties: 0
+  no-qualifying-elements: 0
+  nesting-depth:
+    - 1
+    -
+      max-depth: 7
+  empty-line-between-blocks: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0

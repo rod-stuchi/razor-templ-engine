@@ -1,0 +1,335 @@
+$debug: false;
+@import './colors';
+@import './icons';
+@mixin arrow-icon {
+  background-image: url('/imgs/arrow.png');
+  background-repeat: no-repeat;
+  height: 16px;
+  padding: 0;
+  width: 16px;
+}
+
+@mixin certificate01 {
+  background-image: url('/imgs/ms-certificate.jpg');
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 503px;
+}
+
+@mixin nivel($color, $nivel) {
+  &::before {
+    background: $color;
+    border-radius: 50%;
+    box-shadow: 0 0 2px $shadow-color;
+    color: if($nivel==2, $color-gray-03, $color-white);
+    content: '''' + $nivel + '''';
+    display: inline-block;
+    font-size: 11px;
+    height: 14px;
+    line-height: 14px;
+    margin: 0 4px 0 1px;
+    text-align: center;
+    vertical-align: 8%;
+    width: 14px;
+  }
+}
+
+@media print {
+  @if $debug { body {background: lightblue;}}
+
+  .not-print {
+    display: none;
+  }
+  div.company {
+    @if $debug { background: red;}
+    page-break-inside: always;
+  }
+  svg.youtube { fill: #bd0000; }
+  svg.dropbox { fill: #007ee5; }
+  svg.download { fill: #2e5d36; }
+  .file-format {
+    margin: 10px 0 0 35px !important;
+    > ul {
+      > li {
+        border: 0 !important;
+        .secure svg {
+          fill: #097b09 !important;
+        }
+        svg {
+          fill: $color-def !important;
+        }
+        a {
+          color: $color-def !important;
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+  .inline-icon {
+    svg {
+      fill: $color-def;
+    }
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.level3 {
+  @include nivel(#198d55, 3);
+}
+
+.level2 {
+  @include nivel(#ffce44, 2);
+}
+
+.level1 {
+  @include nivel(#e27f76, 1);
+}
+
+.img-cert01 {
+  @include certificate01;
+}
+
+.file-format {
+  margin: 10px 0 75px 35px;
+  > ul {
+    > li {
+      border-bottom: 2px solid $color-gray-10;
+      cursor: pointer;
+      display: block;
+      float: left;
+      font-size: 80%;
+      list-style: none;
+      padding: 0 10px 3px;
+      &:hover {
+        .secure svg {
+          fill: #097b09 !important;
+        }
+        svg {
+          fill: $color-def !important;
+          transform: scale(1.23);
+        }
+        a {
+          color: $color-def !important;
+          text-decoration: underline;
+        }
+      }
+      a {
+        color: $color-gray-10;
+        display: table-cell;
+        text-decoration: none;
+      }
+      div {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+    }
+    li.separator {
+      border: 0;
+    }
+    li.btlf {
+      border-bottom-left-radius: 7px;
+    }
+    li.btrg {
+      border-bottom-right-radius: 7px;
+    }
+  }
+}
+
+.content {
+  margin: auto;
+  padding: 10px 0;
+  width: 820px;
+  @if ($debug) {
+    background-color: rgb(248, 252, 166);
+  }
+  h1 {
+    color: $color-def;
+  }
+  >div {
+    display: inline-block;
+  }
+  abbr {
+    border-bottom: 1px dotted $color-gray;
+  }
+  .name {
+    h1 {
+      text-shadow: 1px 1px 3px $name-shw-color;
+    }
+    @if($debug) {
+      background-color: lightblue;
+    }
+    h4,
+    h5 {
+      margin-top: 3px;
+    }
+  }
+  .contact {
+    float: right;
+    @if($debug) {
+      background-color: rgb(116, 225, 143);
+    }
+    //margin: 10px 0 0;
+    li {
+      div.label {
+        display: table-cell;
+        padding: 0 7px 0 0;
+        text-align: right;
+        width: 60px;
+        +a {
+          color: $color-def;
+          display: table-cell;
+          font-weight: bold;
+          text-decoration: none;
+          vertical-align: middle;
+          width: 190px;
+          &:hover {
+            text-shadow: 1px 1px 3px $name-shw-color;
+          }
+        }
+      }
+      list-style: none;
+      padding: 2px 0;
+    }
+  }
+  .title {
+    margin: 25px 0 0;
+    width: 100%;
+    h2 {
+      margin: 0 0 7px;
+      @if($debug) {
+        border: 1px solid red;
+      }
+    }
+    hr {
+      margin: -5px 0 0;
+    }
+  }
+  .education {
+    & > ul {
+      margin: 10px 0 0 15px;
+      > li {
+        font-size: 14px;
+        list-style: none;
+        margin: 5px 0;
+        > ul {
+          li {
+            &:first-child {
+              font-weight: bold;
+              text-align: right;
+              width: 155px;
+              &::after {
+                @include arrow-icon;
+                color: transparent;
+                content: '__';
+              }
+            }
+            display: inline-table;
+            line-height: 20px;
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+  .knowledge {
+    & > ul {
+      margin: 10px 0 0 15px;
+      > li {
+        
+        font-size: 14px;
+        list-style: none;
+        margin: 5px 0;
+        > ul {
+          li {
+            @if ($debug) { border: 1px solid #0424c6; }
+            &:first-child {
+              font-weight: bold;
+              text-align: right;
+              width: 155px;
+            }
+            &.item {
+              &::after {
+                @include arrow-icon;
+                color: transparent;
+                content: '__';
+              }
+            }
+            &:nth-child(n+2) {
+              border: 1px solid $color-gray-15;
+              border-radius: 3px;
+              line-height: 22px;
+              margin: 0 3px;
+              padding: 0 3px 0 2px;
+              span {
+                color: $color-gray-11;
+                font-size: 11px;
+              }
+            }
+            display: inline-table;
+            list-style: none;
+          }
+        }
+      }
+    }
+    .subtitle {
+      color: $color-gray-10;
+      font-size: 12px;
+      margin: 20px 0 0;
+      text-align: center;
+      span {
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+  .certification {
+    >div {
+      margin: 20px 0 0 30px;
+    }
+  }
+  .outcome {
+    display: table;
+    >div {
+      display: table;
+      margin: 10px 0 0 15px;
+      div.company {
+        margin: 15px auto 5px;
+        width: 800px;
+        >h3 {
+          display: inline-flex;
+        }
+        div.date {
+          display: inline-flex;
+          float: right;
+          font-size: 12px;
+          margin: 4px 0 0;
+          span:nth-child(2) {
+            margin-left: 7px;
+          }
+        }
+      }
+      div.desc {
+        font-size: 14px;
+        line-height: 19px;
+        margin: 10px 0 0 20px;
+        text-align: left;
+        p {
+          margin: 4px 0;
+        }
+        strong {
+          font-size: 16px;
+        }
+        .dest {
+          border-bottom: 1px solid $color-mark;
+          padding: 0 2px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

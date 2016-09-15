@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curriculo Protegido - Rodrigo Stuchi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/css/prettyPhoto.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettyPhoto/3.1.6/js/jquery.prettyPhoto.min.js"></script>
+    
+    <!-- build:inlinecss -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:inlinejs -->
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body onload="secure.checkPageLoad()">
+    <div class="bframe">
+        <div class="content">
+            <div class="header">
+                <div class="border-logo">
+                    <div class="lock-icon"></div>
+                </div>
+                <div class="title">
+                    Currículo Seguro<br>
+                    <p>Rodrigo Stuchi</p>
+                </div>
+                <div class="title"></div>
+            </div>
+            <hr>
+            <div class="cform">
+                <p class="text">Digite a senha <!-- helper:[ <span>@Model.Password</span> ] -->[ <span>123456</span> ]<!-- endhelper --> para visualizar o currículo.</p>
+                <p class="text warning">ATENÇÃO: o bloqueio de pop-up pode acusar senha incorreta.</p>
+                <br>
+                <fieldset>
+                    <ul class="fieldlist">
+                        <li>
+                            <input type="password" name="txt-pass" id="txt-pass" size="42" placeholder="Senha"><span class="cbder">[</span><span id="counter">0</span><span class="cbder">]</span>
+                        </li>
+                        <li>
+                            <button id="btn-decrypt" onclick="secure.decrypt()">Confirmar</button>
+                            <p id="pww-info" class="nodisplay"><strong>Senha incorreta.</strong></p>
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+            <div class="footer">
+                <h3>Descrição</h3>
+                <br>
+                <p>Este arquivo é foi gerado com <strong><i>Razor Template Engine</i></strong> e seu conteúdo esta criptografado com algoritmo de chave simétrica AES 256-bit.</p>
+                <ul>
+                    <li>Criptografado no servidor, escrito em C#.</li>
+                    <li>Desciptografado no navegador, com JavaScript.</li>
+                    <li>Mais portável que PDF, pode ser aberto em qualquer dispositivo (<a target="_blank" title="YouTube" rel="prettyPhoto" href="https://www.youtube.com/watch?v=_zetuDFeB7g&width=1280&height=720">até Smart TV</a>).</li>
+                    <li>Mais leve que PDF, este arquivo: <strong>102 KB</strong>, <a target="_blank" href="http://tiny.cc/rodstu-cv-pdfs">PDF com senha</a>: 163 KB</li>
+                    <li>Mais seguro que PDF, apenas a <a target="_blank" href="https://helpx.adobe.com/acrobat/using/securing-pdfs-passwords.html#id_48581">última versão do PDF</a> suporta criptografia AES 256-bit.
+                        <ul class="uncheck">
+                            <li>Acrobat 6.0 And Later (PDF 1.5) encrypts the document using 128-bit RC4.</li>
+                            <li>
+                                <p>Acrobat 7.0 And Later (PDF 1.6) encrypts the document using the AES encryption algorithm with a 128-bit key size.</p>
+                            </li>
+                            <li>
+                                <p>Acrobat X And Later (PDF 1.7) encrypts the document using 256-bit AES. To apply 256-bit AES encryption to documents created in Acrobat 8 and 9, select Acrobat X And Later.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <hr>
+                <p align="center">Rodrigo Stuchi - &copy; <!-- helper:@DateTime.Now.Year-->XXXX<!-- endhelper -->.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

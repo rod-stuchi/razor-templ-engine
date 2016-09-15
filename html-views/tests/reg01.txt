@@ -1,0 +1,28 @@
+<body>
+    <div class="conteudo">
+        <div class="nome">
+            <h1>Rodrigo Stuchi</h1>
+            <h4>brasileiro, casado, <!--helper:@Model.Idade-->XX anos<!--endhelper-->.</h4>
+            <h5>Rua Antônio Olinto 99, Apto 74, Jardim Oriental, São Paulo - SP.</h5>
+        </div>
+        <div class="contato">
+            <ul>
+                <li>
+        <div class="resultado titulo">
+            <h2>Experiência e Resultado</h2>
+            <hr>
+            <div>
+                <div class="empresa">
+                    <h3>Banco Sofisa / Sofisa Direto</h3>
+                    <!--helper:@RenderPeriodo("Ago/2012", "Abr/2016")-->
+                    <div class="periodo">
+                        <span>Ago/2012 - atualmente</span>
+                        <span>(3 anos e 8 meses)</span>
+                    </div>
+                    <!--endhelper-->
+                </div>
+                <div class="cargo">
+                    <h5><strong>#</strong> Architect / Full-Stack Developer</h5>
+                </div>
+
+

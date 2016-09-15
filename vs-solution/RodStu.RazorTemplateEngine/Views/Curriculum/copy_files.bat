@@ -1,0 +1,1 @@
+copy .\*.* ..\..\..\cmd\bin\x64\Debug\Views\Curriculum\

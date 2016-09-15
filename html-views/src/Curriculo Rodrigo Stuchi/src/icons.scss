@@ -1,0 +1,71 @@
+@import './colors';
+.inline-icon {
+  white-space: nowrap;
+  svg {
+    $size: 16px;
+    fill: $color-gray-13;
+    height: $size;
+    margin: 0 0 0 2px;
+    position: relative;
+    top: 4px;
+    transform: scale(1);
+    transition: all .15s ease-in-out;
+    width: $size;
+  }
+  &:hover svg {
+    fill: $color-def;
+    transform: scale(1.3);
+  }
+}
+
+.downcv-icon {
+  svg {
+    $size: 32px;
+    fill: $color-gray-11;
+    height: $size;
+    transform: scale(1);
+    transition: all .15s ease-in-out;
+    width: $size;
+  }
+}
+
+.secure {
+  svg {
+    fill: #4eb44e;
+  }
+}
+
+.demo-icon {
+  a {
+    text-decoration: none;
+  }
+  svg {
+    $i: 1.6;
+    $size: 20px;
+    fill: $color-gray-13;
+    height: $size;
+    position: relative;
+    top: 5px;
+    transform: scale(1);
+    transition: all .15s ease-in-out;
+    width: $size;
+    &.youtube {
+      &:hover {
+        fill: #bd0000; //youtube
+        transform: scale($i);
+      }
+    }
+    &.dropbox {
+      &:hover {
+        fill: #007ee5; //dropbox
+        transform: scale($i);
+      }
+    }
+    &.download {
+      &:hover {
+        fill: #2e5d36; //download
+        transform: scale($i);
+      }
+    }
+  }
+}

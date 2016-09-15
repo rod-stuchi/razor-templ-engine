@@ -1,0 +1,180 @@
+$debug: false;
+$comprimento: 770px;
+
+@import './colors';
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.lock-icon {
+  @if ($debug) {
+    background-color: $debug-color1;
+  }
+  background-image: url('/imgs/lock-vector.svg');
+  background-repeat: no-repeat;
+  $size: 95px;
+  height: $size;
+  width: $size;
+}
+
+.error {
+  background: $gray12-color;
+  border: 2px solid $red-color !important;
+}
+
+.nodisplay {
+  display: none;
+}
+
+.pwwinfo {
+  color: $red-color;
+  display: inline;
+  font-family: sans-serif;
+  margin: 0 0 0 15px;
+}
+
+.warning {
+  background: #fefea9;
+  display: inline;
+  padding: 3px;
+}
+
+.bframe {
+  background: linear-gradient($gray08-color 0%, $gray11-color 100%);
+  border-radius: 12px;
+  box-shadow: 0 0 20px 5px $black-075-color;
+  height: $comprimento;
+  margin: 40px auto;
+  padding: 10px;
+  width: 700px;
+}
+
+.content {
+  background: $white-color;
+  border-radius: 12px;
+  height: $comprimento;
+  .header {
+    display: table;
+    margin: auto;
+    padding-top: 10px;
+    width: 650px;
+    .border-logo {
+      display: table-cell;
+      padding: 0 0 0 20px;
+      width: 130px;
+      @if ($debug) {
+        background: $debug-color3;
+      }
+    }
+    .title {
+      @if ($debug) {
+        background: $debug-color2;
+      }
+      color: $title-color;
+      display: table-cell;
+      font: {
+        family: sans-serif;
+        size: 2.7em;
+      }
+      padding: 0 20px;
+      text-align: center;
+      vertical-align: middle;
+      >p {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+    }
+    + hr {
+      margin: 10px 0 0;
+    }
+  }
+  .cform {
+    margin: 20px 0 0;
+    padding: 15px;
+    p.text {
+      font-family: sans-serif;
+      line-height: 22px;
+      span {
+        color: $gray07-color;
+        font-size: 80%;
+        letter-spacing: 1px;
+      }
+    }
+    fieldset {
+      border-color: $gray10-color;
+      border-style: solid;
+      margin: 10px 0 0;
+      padding: 20px 30px;
+      li {
+        list-style: none;
+        padding: 8px 0;
+      }
+      .fieldlist {
+        input {
+          &[type=password] {
+            box-sizing: border-box;
+            font-size: 120%;
+            padding: 2px;
+          }
+        }
+        span.cbder {
+          font-size: 130%;
+          margin: 0 5px;
+        }
+        #btn-decrypt {
+          background-color: $white-color;
+          border: 2px solid $black-color;
+          cursor: pointer;
+          font-size: 102%;
+          padding: 5px;
+          position: relative;
+          top: -2px;
+          width: 120px;
+          &:hover {
+            background: $btn-hover-color;
+            border-color: $btn-hover-color;
+            color: $white-color;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    font-family: sans-serif;
+    font-size: 87%;
+    padding: 15px;
+    hr {
+      margin: 0 0 10px;
+    }
+    h6 {
+      margin: 6px 0 0;
+    }
+    ul {
+      padding: 15px 0 0 20px;
+      li {
+        background: url('/imgs/check-mark.svg') no-repeat 0 5px;
+        background-size: 13px;
+        list-style: none;
+        padding: 4px 0 4px 20px;
+      }
+    }
+    ul.uncheck {
+      margin: 5px 0 5px 13px;
+      padding: 0;
+      li {
+        //font-style: italic;
+        background: none;
+        color: $sub-item-color;
+        font-size: 90%;
+        line-height: 18px;
+        //list-style-position: inside;
+        list-style-type: disc;
+        padding: 3px;
+        width: 90%;
+      }
+    }
+  }
+}

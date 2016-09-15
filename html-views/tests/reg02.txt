@@ -1,0 +1,45 @@
+var exp = module.exports = {};
+
+var pageIsLoaded = true;
+//razor:var cttCipher = [@Raw(Model.CipherText)];
+var cttCipher = ["U2FsdGVkX19f2rSF8G7sSSKwr+JWsEZYySfbePfitkbo462FKaIJNOc/v5V8+h"
+,"Vo4k5dHornELJHfTx2h+XsXQstYXFL13QdRFQ5v0OfWNIubrYlnQBm6DOdHKQlJ44j2RJLg2cknFDX0"
+,"bwBWvXCP2/db6HShj9/NtdusBUcGf62bnZC1ADeFxKnR+r6Sa8SNEk2AAlq8k6cN0z4EpL/WgQrGVNe"
+,"+nmAlLxxY1MexWZ0rWc5pjlubyddKK9Z+jbcbXqmseED1iXPHjcmGsPHrMQIylWmt2jXaw6bq/8IVrF"
+,"UgqZPL1ICfWF7bTy3SNkI+t6o/vEvq1GJ9iqvn7qQyPrqCL2ztuORPhPwMGP7ZzzVUozT+c7Wj1X2eU"
+,"qkgxjpECjmJiigXFHCv/vWC/Yk4+oK644ajGknDFvt7dQKb320uJHdfNuuFAZiVQ2DrSfxq+DIWe4pj"
+,"PPFWCArZ566vRzZRENA9l2lIQmWga8q+/LVirG+/wGWzC/QXMypLPRa+l3WUl6pm918RPCZOkzUtfb3"
+,"zSaLX9b6cuSOw1KJfjpvwWOu1RVAEtRzN8cn9B6zNlXFlDlo1x57H/4Bo760JMpn8mbLZq4yW5cg2T4"
+,"n61sIpFjDVArQPvEzep7N+nVtq3apqeHo/Uge3WA/81o0lo1jJY2duUZgakK5Bm5nN1hJDHrQeexGrl"
+,"DAAaPmR5OdbM8IeNeu1NF9c0NnGXUnskNnlHZwODCQNCrz/xRbLMNdfPOjCUjVn36H1nRT+ngGS/c/8"
+,"iiGQy1iBGWycnVvbkQF0UWdzXrw1miqBkj8f7eKup1GEYn+ylVBM6VeboPez2UOLU3VfzGmj0w3yb4f"
+,"h5YbxZI1TzLIFFONHuj1DTpr49BEb9Q3QeSUHytn0msnvLKpgDxFg03gTnu+BXypM94ynil38d3saIA"
+,"J+Qe8DSdZfsXHo6zegvYWUQl+px8Ti3+pc7T3zs/1iDFEvkGDJyIJOxhQBx0DfYi8tUxV+WXA3czDL4"
+,"WZnOYNOLr5vljZrVhAQglg6bcZlFIj/HqXwf23zUmnUHWAFuPKlUk7NpMejtBw8EuMOJIncdGZSZV9r"
+,"luzuZoK6gfBYPUd1mzRtoY7dQqZ3UYvzBNuXOyb2IPSrEEQXzeYFhDz8lC5JRpHN+gPzKVoLyK9pnl9"
+,"Xzb9ZthQXdTKOoHAWQ8Rtoq2DSfZaF60edOUVFSTZkhw1IrcJ9mP8oUTCSMiLvNqwg0+1KsfF0dMrQs"
+,"QnmQnbMoiaofGPNvcEfDrvYQhVfk71/ZbgN/RQHejqwEBQ2EL51niE7qm2fOvnPyglpD+E0sTIcRP8T"
+,"oQRV40wINFNiYnzUwBnQhxQLU6QugZQnYUGoYhWWIf/x00sRNAC87xcViOmadVPWs0qsICZJgPqPOKk"
+,"L/ql3Us5ENQg+xfdStQ4fyljPBFnX+OXlSMfKbueKwSh58fq5hNw6Slk/jYYlnqI+uagNypHkOv5PlI"
+,"kyPXNLDzN+2jU8c4GIBhLf5OMOo66p24qI2BFA7CJfEQGZcuvXH6rKm6vVD08OGlNpaaQ4bXXcKVwys"
+,"EUPnUp8M8FR5ju7M="]
+//endrazor
+
+exp.decrypt = function () {
+    if (!pageIsLoaded) {
+        alert('Aguarde a p\xe1gina carregar.');
+        return;
+    }
+
+    var txtpass = document.getElementById('txt-pass');
+    var passHash = Core.SHA512(txtpass.value);
+    var txtCipher = cttCipher.join('');
+    //razor:    var iniVector = Core.enc.Hex.parse('@Model.InitializationVector');
+    var iniVector = Core.enc.Hex.parse('@Model.InitializationVector');
+    //endrazor
+
+
+var pageIsLoaded = true;
+//razor:var cttCipher = [_____@Raw(Model.CipherText)___];
+var cttCipher = ['@Raw(Model.CipherText)'];
+//endrazor

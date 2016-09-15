@@ -1,0 +1,10 @@
+packages
+*.user
+.vs
+.idea
+*.suo
+node_modules
+bin
+obj
+_dist
+__FILES
