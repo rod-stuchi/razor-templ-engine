@@ -1,1 +1,1 @@
-copy .\*.* ..\..\..\cmd\bin\x64\Debug\Views\Curriculum\
+copy .\*.* ..\..\..\RodStu.CMD\bin\x64\Debug\Views\Curriculum
